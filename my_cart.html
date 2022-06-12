@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&A | My Cart</title>
+    <!-- CSS only Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./panier.png" > 
+</head>
+<body>
+    <!-- header-->
+    <header class="bg-light shadow-sm sticky-top" style="color:#ff666f">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-evenly">
+            
+           <!-- brand --> 
+           <a class="navbar-brand d-flex pe-5 ps-5 fs-2 fw-bold" style="color:#ff666f ;">
+               B&A
+            </a>
+            <!-- search form --> 
+            <form class="form-inline d-flex flex-fill ">
+                <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                <button class="btn search ms-2" type="submit">Search</button>
+            </form>
+            <!-- options --> 
+            <div class="collapse navbar-collapse navbarTogglerDemo03 position-relative " id="navbarTogglerDemo03">
+                <div class="d-flex mt-lg-0 position-absolute " style="font-size: 1.1rem;">
+                    <!-- Favorites --> 
+                    <a  class="nav-link ms-5 px-2 choice" href="./index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+                            <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+                        </svg>
+                        home
+                    </a>
+                    <!-- my Cart--> 
+                    <a  class="nav-link mx-2 choice" href="./my_cart.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                        </svg>
+                        My Cart
+                    </a>
+                    <!-- my profile --> 
+                    <div class="nav-item dropdown mx-2 me-5 choice ">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg>
+                            My profile
+                        </a>
+                        <!-- dropdown button --> 
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item " href="#"> Sign in</a>
+                            <a class="dropdown-item " href="#">Account setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item " href="#">Signup</a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- collapse button -->
+            <button class="navbar-toggler me-1 ms-2" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </header>
+    <!--shopping list-->
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table table-hover">
+                    <!-- table head-->
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <!-- table body-->
+                    <tbody >
+                        <!-- 1st row-->
+                        <tr id="tr1" hidden=true >
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2168909-1-01.webp" class="h-25" style="width:100px ;" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | Floral</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td  class="col-sm-1 col-md-1 " style="text-align: center">
+                                <span id="qte1">0</span>
+                            </td>
+                            <td id="pr1" class="col-sm-1 col-md-1 text-center"><strong>59</strong></td>
+                            <td id="tt1" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 2nd row-->
+                        <tr id="tr2"  hidden=true >
+                            <td class="col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2127200-1-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | Fit</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td  class="col-md-1" style="text-align: center">
+                                <span id="qte2">0</span>
+                            </td>
+                            <td id="pr2" class="col-md-1 text-center"><strong>49</strong></td>
+                            <td id="tt2" class="col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-md-1">
+                            <button type="button" class="btn btn-danger rembtn">
+                                <span class="glyphicon glyphicon-remove"></span> Remove
+                            </button></td>
+                        </tr>
+                        <!-- 3rd row-->
+                        <tr id="tr3"  hidden=true >
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2165584-2-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | A-Line</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte3">0</span>
+                            </td>
+                            <td id="pr3" class="col-sm-1 col-md-1 text-center"><strong>35</strong></td>
+                            <td id="tt3" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 4th row-->
+                        <tr id="tr4"  hidden=true>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2170883-1-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4 ">Dress | Fit</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte4">0</span>
+                            </td>
+                            <td id="pr4" class="col-sm-1 col-md-1 text-center"><strong>34</strong></td>
+                            <td id="tt4" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 5th row-->
+                        <tr id="tr5"  hidden=true>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2172099-2-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | A-Line</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte5">0</span>
+                            </td>
+                            <td id="pr5" class="col-sm-1 col-md-1 text-center"><strong>25</strong></td>
+                            <td id="tt5" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 6th row-->
+                        <tr id="tr6"  hidden=true>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2179983-1-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | Fit</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte6">0</span>
+                            </td>
+                            <td id="pr6" class="col-sm-1 col-md-1 text-center"><strong>69 </strong></td>
+                            <td id="tt6" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 7th row-->
+                        <tr id="tr7"  hidden=true>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2172128-4-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | Fit </h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte7">0</span>
+                            </td>
+                            <td id="pr7" class="col-sm-1 col-md-1 text-center"><strong>29</strong></td>
+                            <td id="tt7" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 8th row-->
+                        <tr id="tr8" hidden=true >
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2142409-1-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | Fit </h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte8">0</span>
+                            </td>
+                            <td id="pr8" class="col-sm-1 col-md-1 text-center"><strong>29</strong></td>
+                            <td id="tt8" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- 9th row-->
+                        <tr id="tr9"  hidden=true>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="d-flex media-body">
+                                        <img src="./2170889-1-01.webp" class="h-25" style="width:100px" alt="product image">
+                                        <h4 class="media-heading ms-lg-4">Dress | Floral</h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <span id="qte9">0</span>
+                            </td>
+                            <td id="pr9" class="col-sm-1 col-md-1 text-center"><strong>49</strong></td>
+                            <td id="tt9" class="col-sm-1 col-md-1 text-center"><strong>0</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger rembtn">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- total row-->
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td><h3>Total</h3></td>
+                            <td  class="text-right"><h3><strong id="tt">0</strong></h3></td>
+                        </tr>
+                        <!-- checkout row-->
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>
+                            <a type="button" class="btn btn-default" href="./index.html">
+                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                            </a></td>
+                            <td>
+                            <a type="button" class="btn btn-success" href="#">
+                                Checkout <span class="glyphicon glyphicon-play"></span>
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Js Boostrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./action1.js"></script>
+</body>
+</html>
